@@ -23,19 +23,19 @@
 
 ## Time Estimates
 
-Name of feature: ________________________________
+Name of feature: Setup React Repository & API Keys
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 15min
 
-Start time: _____
+Start time: 3:20
 
-Finish time: _____
+Finish time: 3:34
 
-Actual time needed to complete: _____
+Actual time needed to complete: 14min
 
 ###########################################################################
 
-Name of feature: ________________________________
+Name of feature: Locations
 
 Estimate of time needed to complete: _____
 
