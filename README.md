@@ -1,25 +1,31 @@
 # City Explorer
 
 **Author**: Kyle White
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+
+**Version**: 1.0.0
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This application is built on the React frontend framework and provides users with a way to explore cities on a global scale from the comfort of their computer. Users can expect to see information about cities, their geolocation, and mapped images displayed once a user provides input.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+1. Create a new React application on your local machine.
+2. Create a GitHub repository and clone this project onto your local machine into the new React application folder. 
+3. Create a new user account on locationIQ and get your own personal API key.
+4. Create a .env file and change the API key using the sample in the .env.sample file
+5. Start the application using your favorite code editor!
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+Built using React, Bootstrap, and axios API handler.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-
-## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-
+04-18-2023 3:34 Application is fully setup with a React repository and implmentaion of API keys.
+04-18-2023 4:16 Application location functionality is working to render location data from the API based on user input.
+04-18-2023 5:19 Application map is working to display a PNG image of the user selected city.
+04-18-2023 5:42 Application now has a functioning error handler.
 
 ## Time Estimates
 
@@ -65,23 +71,12 @@ Estimate of time needed to complete: 15min
 
 Start time: 5:20
 
-Finish time: _____
+Finish time: 5:42
 
-Actual time needed to complete: _____
-
-###########################################################################
-
-Name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 22min
 
 ###########################################################################
+
 
 ## Getting Started with Create React App
 
