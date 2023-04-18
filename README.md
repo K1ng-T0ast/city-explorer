@@ -29,11 +29,68 @@ Built using React, Bootstrap, and axios API handler.
 04-18-2023 5:19 Application map is working to display a PNG image of the user selected city.
 04-18-2023 5:42 Application now has a functioning error handler.
 
-## Web Request Response Cycle
+## Web Request Response Cycle (with server, without API)
 
-<img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Wen Request Response Cycle">
+<img src="./src/Assets/WRRCwithserverwithoutapi" alt="web request response cycle image" title="Web Request Response Cycle">
+
+## Web Request Response Cycle (without server)
+
+<img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Web Request Response Cycle">
 
 ## Time Estimates
+
+### (Version 1.2.0)
+
+Name of feature: Setup Server Repository
+
+Estimate of time needed to complete: 15min
+
+Start time: 3:14
+
+Finish time: 3:34
+
+Actual time needed to complete: 14min
+
+###########################################################################
+
+Name of feature: Locations
+
+Estimate of time needed to complete: 35min
+
+Start time: 3:44
+
+Finish time: 4:16
+
+Actual time needed to complete: 32min
+
+###########################################################################
+
+Name of feature: Map
+
+Estimate of time needed to complete: 40min
+
+Start time: 4:18
+
+Finish time: 5:19
+
+Actual time needed to complete: 61min
+
+###########################################################################
+
+Name of feature: Error Handling
+
+Estimate of time needed to complete: 15min
+
+Start time: 5:20
+
+Finish time: 5:42
+
+Actual time needed to complete: 22min
+
+###########################################################################
+
+
+### (Version 1.0.0)
 
 Name of feature: Setup React Repository & API Keys
 

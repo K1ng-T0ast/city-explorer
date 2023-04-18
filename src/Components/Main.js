@@ -23,6 +23,19 @@ class Main extends React.Component {
         })
     }
 
+    handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            let url = `${process.env.REACT_APP_SERVER}/` //weather?city=${this.state.city}`;
+
+            let data = await axios.get(url);
+
+        } catch (error) {
+            
+        }
+    }
+
     getCityData = async (event) => {
         event.preventDefault();
         try {
