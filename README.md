@@ -39,57 +39,6 @@ Built using React, Bootstrap, and axios API handler.
 
 ## Time Estimates
 
-### (Version 1.2.0)
-
-Name of feature: Setup Server Repository
-
-Estimate of time needed to complete: 15min
-
-Start time: 3:14
-
-Finish time: 3:34
-
-Actual time needed to complete: 14min
-
-###########################################################################
-
-Name of feature: Locations
-
-Estimate of time needed to complete: 35min
-
-Start time: 3:44
-
-Finish time: 4:16
-
-Actual time needed to complete: 32min
-
-###########################################################################
-
-Name of feature: Map
-
-Estimate of time needed to complete: 40min
-
-Start time: 4:18
-
-Finish time: 5:19
-
-Actual time needed to complete: 61min
-
-###########################################################################
-
-Name of feature: Error Handling
-
-Estimate of time needed to complete: 15min
-
-Start time: 5:20
-
-Finish time: 5:42
-
-Actual time needed to complete: 22min
-
-###########################################################################
-
-
 ### (Version 1.0.0)
 
 Name of feature: Setup React Repository & API Keys
