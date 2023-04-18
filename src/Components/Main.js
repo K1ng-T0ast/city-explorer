@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Card, Image, Alert } from 'react-bootstrap';
+import CityForm from './Form';
+import CityAlert from './Alert';
+import CityCard from './Card';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 class Main extends React.Component {
     constructor(props) {
@@ -41,34 +44,15 @@ class Main extends React.Component {
                 <Row>
                     <Col>
                         <h2 className='city-header'>Travel Around The Globe From Home</h2>
-                        <Form className='city-form' onSubmit={this.getCityData}>
-                            <Form.Group className='city-form-label'>
-                                <Form.Label>Type a City Name</Form.Label>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Control type="text" onChange={this.handleCityInput} />
-                            </Form.Group>
-                            <Form.Group>
-                                <Button className='city-button' type='submit'>Explore!</Button>
-                            </Form.Group>
-                        </Form>
+                        <CityForm onFormSubmit={this.getCityData} onCityInputChange={this.handleCityInput} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         {this.state.error ? (
-                            <Alert variant='danger'>
-                                <Alert.Heading>Error {this.state.errorMessage}</Alert.Heading>
-                                <p>Failed to retrieve city information. Please try again.</p>
-                            </Alert>
+                            <CityAlert errorMessage={this.state.errorMessage} />
                         ) : (
-                            <Card className='city-display'>
-                                <Card.Body>
-                                    <Card.Title>{this.state.cityData.display_name}</Card.Title>
-                                    <Card.Text>Latitude: {this.state.cityData.lat}</Card.Text>
-                                    <Card.Text>Longitude: {this.state.cityData.lon}</Card.Text>
-                                </Card.Body>
-                            </Card>
+                            <CityCard cityData={this.state.cityData} />
                         )}
                     </Col>
                 </Row>
