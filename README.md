@@ -37,23 +37,23 @@ Actual time needed to complete: 14min
 
 Name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 35min
 
-Start time: _____
+Start time: 3:44
 
-Finish time: _____
+Finish time: 4:16
 
-Actual time needed to complete: _____
+Actual time needed to complete: 32min
 
 ###########################################################################
 
-Name of feature: ________________________________
+Name of feature: Map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 20min
 
-Start time: _____
+Start time: 4:18
 
-Finish time: _____
+Finish time: 
 
 Actual time needed to complete: _____
 
