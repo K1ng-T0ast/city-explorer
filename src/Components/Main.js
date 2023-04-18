@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Card, Image } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card, Image, Alert } from 'react-bootstrap';
 
 class Main extends React.Component {
     constructor(props) {
@@ -57,7 +57,10 @@ class Main extends React.Component {
                 <Row>
                     <Col>
                         {this.state.error ? (
-                            <p>{this.state.errorMessage}</p>
+                            <Alert variant='danger'>
+                                <Alert.Heading>Error {this.state.errorMessage}</Alert.Heading>
+                                <p>Failed to retrieve city information. Please try again.</p>
+                            </Alert>
                         ) : (
                             <Card className='city-display'>
                                 <Card.Body>
