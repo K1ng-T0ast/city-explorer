@@ -2,7 +2,9 @@
 
 **Author**: Kyle White
 
-**Version**: 1.0.0
+**Version**: 1.1.0
+
+Updated on 4-18-23 to separate form, alert, and card into separate components.
 
 ## Overview
 
