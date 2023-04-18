@@ -49,21 +49,21 @@ Actual time needed to complete: 32min
 
 Name of feature: Map
 
-Estimate of time needed to complete: 20min
+Estimate of time needed to complete: 40min
 
 Start time: 4:18
 
-Finish time: 
+Finish time: 5:19
 
-Actual time needed to complete: _____
+Actual time needed to complete: 61min
 
 ###########################################################################
 
-Name of feature: ________________________________
+Name of feature: Error Handling
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 15min
 
-Start time: _____
+Start time: 5:20
 
 Finish time: _____
 
