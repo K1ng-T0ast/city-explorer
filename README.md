@@ -29,7 +29,7 @@ Built using React, Bootstrap, and axios API handler.
 
 ## Web Request Response Cycle
 
-[WRRC](./src/Assets/WRRC%20City%20Explorer.png)
+<img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Wen Request Response Cycle">
 
 ## Time Estimates
 
