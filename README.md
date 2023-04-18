@@ -27,6 +27,10 @@ Built using React, Bootstrap, and axios API handler.
 04-18-2023 5:19 Application map is working to display a PNG image of the user selected city.
 04-18-2023 5:42 Application now has a functioning error handler.
 
+## Web Request Response Cycle
+
+[WRRC](./src/Assets/WRRC%20City%20Explorer.png)
+
 ## Time Estimates
 
 Name of feature: Setup React Repository & API Keys
