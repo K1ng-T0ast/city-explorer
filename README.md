@@ -29,6 +29,10 @@ Built using React, Bootstrap, and axios API handler.
 04-18-2023 5:19 Application map is working to display a PNG image of the user selected city.
 04-18-2023 5:42 Application now has a functioning error handler.
 
+## Web Request Response Cycle (with server API)
+
+<img src="./src/Assets/WRRCwithserverAPI.png" alt="web request response cycle image" title="Web Request Response Cycle">
+
 ## Web Request Response Cycle (with server, without API)
 
 <img src="./src/Assets/WRRCwithserverwithoutapi.png" alt="web request response cycle image" title="Web Request Response Cycle">
@@ -38,6 +42,36 @@ Built using React, Bootstrap, and axios API handler.
 <img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Web Request Response Cycle">
 
 ## Time Estimates
+
+### (Version 1.2.0)
+
+Name of feature: Setup Frontend Components
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time:
+
+Actual time needed to complete: 
+
+###########################################################################
+
+
+### (Version 1.1.0)
+
+Name of feature: Setup Frontend Components for Server Configuration
+
+Estimate of time needed to complete: 30min
+
+Start time: 6:20
+
+Finish time: 6:56
+
+Actual time needed to complete: 36min
+
+###########################################################################
+
 
 ### (Version 1.0.0)
 
