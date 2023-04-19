@@ -1,25 +1,46 @@
 import React from 'react';
-import { Accordion, Card, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 class CityWeather extends React.Component {
-    render() {
-        const forecasts = this.props.forecasts.map((forecast, index) => (
-            <Card key={index}>
-                <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey={index}>
-                        {forecast.date}
-                    </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey={index}>
-                    <Card.Body>{forecast.description}</Card.Body>
-                </Accordion.Collapse>
-            </Card>
-        ));
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
 
+    render() {
+        const { forecasts } = this.props;
         return (
             <div>
-                <h2>Weather Forecast</h2>
-                <Accordion>{forecasts}</Accordion>
+                {forecasts.map((forecast, index) => (
+                    <Card key={index} style={{ marginBottom: '1rem' }}>
+                        <Card.Header>
+                            {forecast.date}
+                            <Button
+                                variant='link'
+                                onClick={() =>
+                                    this.setState((prevState) => ({
+                                        [index]: !prevState[index],
+                                    }))
+                                }
+                            >
+                                Show/Hide Details
+                            </Button>
+                        </Card.Header>
+                        {this.state[index] && (
+                            <Card.Body>
+                                <Card.Text>
+                                    Description: {forecast.description}
+                                </Card.Text>
+                                <Card.Text>
+                                    High Temperature: {forecast.maxTemp} °F
+                                </Card.Text>
+                                <Card.Text>
+                                    Low Temperature: {forecast.minTemp} °F
+                                </Card.Text>
+                            </Card.Body>
+                        )}
+                    </Card>
+                ))}
             </div>
         );
     }
