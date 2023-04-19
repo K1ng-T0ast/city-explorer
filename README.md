@@ -31,7 +31,7 @@ Built using React, Bootstrap, and axios API handler.
 
 ## Web Request Response Cycle (with server, without API)
 
-<img src="./src/Assets/WRRCwithserverwithoutapi" alt="web request response cycle image" title="Web Request Response Cycle">
+<img src="./src/Assets/WRRCwithserverwithoutapi.png" alt="web request response cycle image" title="Web Request Response Cycle">
 
 ## Web Request Response Cycle (without server)
 
