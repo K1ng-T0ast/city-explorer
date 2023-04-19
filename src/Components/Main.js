@@ -3,6 +3,7 @@ import axios from 'axios';
 import CityForm from './Form';
 import CityAlert from './Alert';
 import CityCard from './Card';
+import CityWeather from './Weather';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 class Main extends React.Component {
@@ -13,7 +14,9 @@ class Main extends React.Component {
             cityData: [],
             mapUrl: '',
             error: false,
-            errorMessage: ''
+            errorMessage: '',
+            forecasts: [],
+            showWeather: false
         }
     }
 
@@ -22,19 +25,6 @@ class Main extends React.Component {
             city: event.target.value
         })
     }
-
-    // handleSubmit = async (event) => {
-    //     event.preventDefault();
-
-    //     try {
-    //         let url = `${process.env.REACT_APP_SERVER}/` //weather?city=${this.state.city}`;
-
-    //         let data = await axios.get(url);
-
-    //     } catch (error) {
-            
-    //     }
-    // }
 
     getCityData = async (event) => {
         event.preventDefault();
@@ -46,6 +36,13 @@ class Main extends React.Component {
             let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_API_KEY}&center=${cityData.data[0].lat},${cityData.data[0].lon}&zoom=12&size=600x400&format=png`
 
             this.setState({ cityData: cityData.data[0], mapUrl: mapUrl, error: false });
+
+            let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${cityData.data[0].lat}&lon=${cityData.data[0].lon}&searchQuery=${this.state.city}`;
+
+            let weatherData = await axios.get(weatherUrl);
+
+            this.setState({ forecasts: weatherData.data, showWeather: true, error: false });
+
         } catch (error) {
             this.setState({ error: true, errorMessage: error.message });
         }
@@ -76,6 +73,13 @@ class Main extends React.Component {
                         )}
                     </Col>
                 </Row>
+                {this.state.showWeather && (
+                    <Row>
+                        <Col>
+                            <CityWeather forecasts={this.state.forecasts} />
+                        </Col>
+                    </Row>
+                )}
             </Container>
         )
     }
