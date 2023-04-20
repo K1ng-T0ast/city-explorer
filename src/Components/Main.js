@@ -4,6 +4,7 @@ import CityForm from './Form';
 import CityAlert from './Alert';
 import CityCard from './Card';
 import CityWeather from './Weather';
+import CityMovies from './Movie';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 class Main extends React.Component {
@@ -16,7 +17,9 @@ class Main extends React.Component {
             error: false,
             errorMessage: '',
             forecasts: [],
-            showWeather: false
+            showWeather: false,
+            movies: [],
+            showMovie: false
         }
     }
 
@@ -43,6 +46,12 @@ class Main extends React.Component {
 
             this.setState({ forecasts: weatherData.data, showWeather: true, error: false });
 
+            let movieUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`;
+
+            let movieData = await axios.get(movieUrl);
+
+            this.setState({ movies: movieData.data, showMovie: true, error: false });
+
         } catch (error) {
             this.setState({ error: true, errorMessage: error.message });
         }
@@ -57,6 +66,7 @@ class Main extends React.Component {
                         <CityForm onFormSubmit={this.getCityData} onCityInputChange={this.handleCityInput} />
                     </Col>
                 </Row>
+                <h3>City Name & Latitude/Longitude</h3>
                 <Row>
                     <Col>
                         {this.state.error ? (
@@ -66,6 +76,7 @@ class Main extends React.Component {
                         )}
                     </Col>
                 </Row>
+                <h3>Map of the city</h3>
                 <Row>
                     <Col className='city-map'>
                         {this.state.mapUrl && (
@@ -77,6 +88,13 @@ class Main extends React.Component {
                     <Row>
                         <Col>
                             <CityWeather forecasts={this.state.forecasts} />
+                        </Col>
+                    </Row>
+                )}
+                {this.state.movies.length > 0 && (
+                    <Row>
+                        <Col>
+                            <CityMovies movies={this.state.movies} />
                         </Col>
                     </Row>
                 )}
