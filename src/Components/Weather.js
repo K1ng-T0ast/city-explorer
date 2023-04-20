@@ -11,10 +11,11 @@ class CityWeather extends React.Component {
         const { forecasts } = this.props;
         return (
             <div>
+                <h3>7 Day Forecast</h3>
                 {forecasts.map((forecast, index) => (
                     <Card key={index} style={{ marginBottom: '1rem' }}>
                         <Card.Header>
-                            {forecast.datetime}
+                            {forecast.date}
                             <Button
                                 variant='link'
                                 onClick={() =>
@@ -32,10 +33,10 @@ class CityWeather extends React.Component {
                                     Description: {forecast.description}
                                 </Card.Text>
                                 <Card.Text>
-                                    High Temperature: {forecast.max_temp} °F
+                                    High Temperature: {forecast.maxTemp} °F
                                 </Card.Text>
                                 <Card.Text>
-                                    Low Temperature: {forecast.min_temp} °F
+                                    Low Temperature: {forecast.minTemp} °F
                                 </Card.Text>
                             </Card.Body>
                         )}
