@@ -2,14 +2,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #5D5C61;
-  color: #ffffff;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #5D5C61;
-  color: #ffffff;
+  background-color: #F7F9FB;
+  color: #31708E;
 }
 
 h1 {
@@ -24,19 +18,20 @@ h2 {
   text-align: center;
 }
 
-h3{
+h3 {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-button{
+button {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-footer{
-  margin-top: 1rem;
+footer {
+  margin-top: 2rem;
+  margin-bottom: 1.5em;
 }
 
 .title-header {
@@ -57,7 +52,7 @@ footer{
   margin-right: auto;
   background-color: #379683;
   border-color: #379683;
-  color: #ffffff;
+  color: #F7F9FB;
 }
 
 .city-button:hover {
@@ -69,11 +64,15 @@ footer{
   text-align: center;
   background-color: #7395AE;
   border-color: #7395AE;
-  color: #ffffff;
+  color: #F7F9FB;
 }
 
 .city-map {
   text-align: center;
+}
+
+.image-border{
+  border: .15em solid #5085A5;
 }
 
 .main-footer {
@@ -81,7 +80,19 @@ footer{
 }
 
 .card {
-  background-color: #B1A296;
-  color: #ffffff;
+  background-color: #5085A5;
+  color: #F7F9FB;
 }
 
+.btn.btn-link{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-caption {
+  margin-bottom: 1em;
+  /* background-color: black; */
+  /* width: fit-content; */
+  /* block-size: fit-content; */
+}

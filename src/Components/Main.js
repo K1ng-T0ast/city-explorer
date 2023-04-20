@@ -80,7 +80,7 @@ class Main extends React.Component {
                 <Row>
                     <Col className='city-map'>
                         {this.state.mapUrl && (
-                            <Image src={this.state.mapUrl} alt='Map of the city' />
+                            <Image src={this.state.mapUrl} alt='Map of the city' className='image-border' />
                         )}
                     </Col>
                 </Row>

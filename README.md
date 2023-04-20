@@ -2,8 +2,9 @@
 
 **Author**: Kyle White
 
-**Version**: 1.2.0
+**Version**: 1.3.0
 
+Updated on 4-20-23 Componetized the front-end codebase. Added CSS styling.
 Updated on 4-19-23 to include movie component, bootstrap carousel, and link to API server.
 Updated on 4-18-23 to separate form, alert, and card into separate components.
 
@@ -25,7 +26,8 @@ Built using React, Bootstrap, and axios API handler.
 
 ## Change Log
 
-04-18-2023 3:34 Application is fully setup with a React repository and implmentaion of API keys.
+04-20-2023 3:44 Application is now refactored and componentized 
+04-19-2023 3:34 Application is fully setup with a React repository and implementaion of API keys.
 04-18-2023 4:16 Application location functionality is working to render location data from the API based on user input.
 04-18-2023 5:19 Application map is working to display a PNG image of the user selected city.
 04-18-2023 5:42 Application now has a functioning error handler.
@@ -43,6 +45,20 @@ Built using React, Bootstrap, and axios API handler.
 <img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Web Request Response Cycle">
 
 ## Time Estimates
+
+### (Version 1.3.0)
+
+Name of feature: Componetize Front End
+
+Estimate of time needed to complete: 30min
+
+Start time: 3:21
+
+Finish time: 3:44
+
+Actual time needed to complete: 23min
+
+###########################################################################
 
 ### (Version 1.2.0)
 
