@@ -2,8 +2,9 @@
 
 **Author**: Kyle White
 
-**Version**: 1.1.0
+**Version**: 1.2.0
 
+Updated on 4-19-23 to include movie component, bootstrap carousel, and link to API server.
 Updated on 4-18-23 to separate form, alert, and card into separate components.
 
 ## Overview
@@ -47,13 +48,13 @@ Built using React, Bootstrap, and axios API handler.
 
 Name of feature: Setup Frontend Components
 
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 1hr
 
-Start time: 
+Start time: 5:05
 
-Finish time:
+Finish time: 6:10
 
-Actual time needed to complete: 
+Actual time needed to complete: 1hr 5min
 
 ###########################################################################
 
