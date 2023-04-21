@@ -3,6 +3,16 @@ import { Card, Button } from 'react-bootstrap'
 
 
 class WeatherDay extends React.Component {
+    convertTime = (timeStamp) => {
+        const date = new Date(timeStamp * 1000);
+        const hours = date.getHours();
+        const minutes = ('0' + date.getMinutes()).slice(-2);
+        const amPm = hours >= 12 ? 'PM' : 'AM';
+        const convertHours = hours % 12 || 12;
+
+        const formatTime = convertHours + ':' + minutes + ' ' + amPm;
+        return formatTime;
+    };
     render() {
         const { forecast, index, toggleDetails, showDetails } = this.props;
         return (
@@ -28,6 +38,12 @@ class WeatherDay extends React.Component {
                             </Card.Text>
                             <Card.Text>
                                 Low Temperature: {forecast.minTemp} °F
+                            </Card.Text>
+                            <Card.Text>
+                                Sunrise: {this.convertTime(forecast.sunrise)}
+                            </Card.Text>
+                            <Card.Text>
+                                Sunset: {this.convertTime(forecast.sunset)}
                             </Card.Text>
                         </Card.Body>
                     )}

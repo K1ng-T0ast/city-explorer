@@ -9,6 +9,10 @@ class CityWeather extends React.Component {
 
     render() {
         const { forecasts } = this.props;
+
+        if (!forecasts){
+            return <div>Loading...</div>;
+        }
         return (
             <div>
                 <h3>7 Day Forecast</h3>

@@ -96,3 +96,11 @@ footer {
   /* width: fit-content; */
   /* block-size: fit-content; */
 }
+
+.carousel.slide{
+  margin-top: 3em;
+}
+
+.rounded-img{
+  border-radius: 10px;
+}

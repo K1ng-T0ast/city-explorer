@@ -2,11 +2,12 @@
 
 **Author**: Kyle White
 
-**Version**: 1.3.0
+**Version**: 1.4.0
 
+Updated on 4-21-23 added photos of searched city to application.
 Updated on 4-20-23 Componetized the front-end codebase. Added CSS styling.
-Updated on 4-19-23 to include movie component, bootstrap carousel, and link to API server.
-Updated on 4-18-23 to separate form, alert, and card into separate components.
+Updated on 4-19-23 included movie component, bootstrap carousel, and link to API server.
+Updated on 4-18-23 separated form, alert, and card into separate components.
 
 ## Overview
 
@@ -26,6 +27,7 @@ Built using React, Bootstrap, and axios API handler.
 
 ## Change Log
 
+04-21-2023 3:19 Aplication now includes carousel photos for city searched
 04-20-2023 3:44 Application is now refactored and componentized 
 04-19-2023 3:34 Application is fully setup with a React repository and implementaion of API keys.
 04-18-2023 4:16 Application location functionality is working to render location data from the API based on user input.
@@ -45,6 +47,20 @@ Built using React, Bootstrap, and axios API handler.
 <img src="./src/Assets/WRRC%20City%20Explorer.png" alt="web request response cycle image" title="Web Request Response Cycle">
 
 ## Time Estimates
+
+### (Version 1.4.0)
+
+Name of feature: Add Photo Component
+
+Estimate of time needed to complete: 30min
+
+Start time: 2:44
+
+Finish time: 3:15
+
+Actual time needed to complete: 31min
+
+###########################################################################
 
 ### (Version 1.3.0)
 
