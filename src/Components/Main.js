@@ -5,7 +5,8 @@ import CityAlert from './Alert';
 import CityCard from './Card';
 import CityWeather from './Weather';
 import CityMovies from './Movie';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import CityPhoto from './Photo';
+import { Container, Row, Col, Image, Carousel } from 'react-bootstrap';
 
 class Main extends React.Component {
     constructor(props) {
@@ -13,13 +14,17 @@ class Main extends React.Component {
         this.state = {
             city: '',
             cityData: [],
+            lat: null,
+            lon: null,
             mapUrl: '',
             error: false,
             errorMessage: '',
             forecasts: [],
             showWeather: false,
             movies: [],
-            showMovie: false
+            showMovie: false,
+            photos: [],
+            showPhoto: false
         }
     }
 
@@ -35,26 +40,53 @@ class Main extends React.Component {
             let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_API_KEY}&q=${this.state.city}&format=json`
 
             let cityData = await axios.get(url);
+            let lat = cityData.data[0].lat;
+            let lon = cityData.data[0].lon;
 
-            let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_API_KEY}&center=${cityData.data[0].lat},${cityData.data[0].lon}&zoom=12&size=600x400&format=png`
+            this.setState({ cityData: cityData.data[0], lat, lon, error: false });
 
-            this.setState({ cityData: cityData.data[0], mapUrl: mapUrl, error: false });
+            let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_API_KEY}&center=${lat},${lon}&zoom=12&size=600x400&format=png`
 
-            let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${cityData.data[0].lat}&lon=${cityData.data[0].lon}&searchQuery=${this.state.city}`;
+            this.setState({ mapUrl: mapUrl })
 
-            let weatherData = await axios.get(weatherUrl);
+            this.getWeatherData(lat, lon);
+            this.getMovieData();
+            this.getPhotoData();
 
-            this.setState({ forecasts: weatherData.data, showWeather: true, error: false });
-
-            let movieUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`;
-
-            let movieData = await axios.get(movieUrl);
-
-            this.setState({ movies: movieData.data, showMovie: true, error: false });
 
         } catch (error) {
             this.setState({ error: true, errorMessage: error.message });
         }
+    };
+
+    getWeatherData = async (lat, lon) => {
+        let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.city}`;
+
+        let weatherData = await axios.get(weatherUrl);
+        console.log('Raw weather data:', weatherData);
+
+
+        this.setState({ forecasts: weatherData.data, showWeather: true, error: false });
+        console.log("Forecasts state updated:", this.state.forecasts);
+
+
+    };
+
+    getMovieData = async () => {
+        let movieUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`;
+
+        let movieData = await axios.get(movieUrl);
+
+        this.setState({ movies: movieData.data, showMovie: true, error: false });
+
+    };
+
+    getPhotoData = async () => {
+        let photoUrl = `${process.env.REACT_APP_SERVER}/photos?city=${this.state.city}`;
+
+        let photoData = await axios.get(photoUrl);
+
+        this.setState({ photos: photoData.data, showPhoto: true, error: false });
     };
 
     render() {
@@ -80,13 +112,14 @@ class Main extends React.Component {
                 <Row>
                     <Col className='city-map'>
                         {this.state.mapUrl && (
-                            <Image src={this.state.mapUrl} alt='Map of the city' />
+                            <Image src={this.state.mapUrl} alt='Map of the city' className='image-border' />
                         )}
                     </Col>
                 </Row>
                 {this.state.showWeather && (
                     <Row>
                         <Col>
+                            {console.log('Forecasts in Main:', this.state.forecasts)}
                             <CityWeather forecasts={this.state.forecasts} />
                         </Col>
                     </Row>
@@ -95,6 +128,24 @@ class Main extends React.Component {
                     <Row>
                         <Col>
                             <CityMovies movies={this.state.movies} />
+                        </Col>
+                    </Row>
+                )}
+                {this.state.photos.length > 0 && (
+                    <Row>
+                        <Col>
+                            <Carousel>
+                                {this.state.photos.map((photo, index) => (
+                                    <CityPhoto
+                                        key={index}
+                                        pic={{
+                                            src: photo.src,
+                                            alt: photo.alt,
+                                            username: photo.username,
+                                        }}
+                                    />
+                                ))}
+                            </Carousel>
                         </Col>
                     </Row>
                 )}
